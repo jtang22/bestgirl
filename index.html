@@ -76,9 +76,7 @@
     }
 
       $scope.pickGirls = function() {
-      	while($scope.girlList.length < 2){
-      		alert("waiting");
-      	}
+      	
       	var firstNdx = Math.floor(Math.random() * $scope.girlList.length);
       	var secondNdx = Math.ceil(Math.random() * $scope.girlList.length);
       	

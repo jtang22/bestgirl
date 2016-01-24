@@ -145,9 +145,9 @@
       $scope.tabs = function(num){
       	
       	 for (var i = 0; i < tabs.length; i++) {
-		tabs[i]= 0;      
+		$scope.tabs[i]= 0;      
 	 }
-	 tabs[num]=1;
+	 $scope.tabs[num]=1;
       }
        $scope.addImage = function(){
       	

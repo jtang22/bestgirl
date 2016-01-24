@@ -82,12 +82,15 @@
       	
       	var random = Math.ceil(Math.random() * $scope.girlList.length) + 1 ;
         
-	$scope.firstGirl = $scope.girlList[firstNdx];
-	$scope.secondGirl = $scope.girlList[secondNdx];
+
 	
 	if (firstNdx == secondNdx){
-		$scope.secondGirl = $scope.girlList[(secondNdx + random) % $scope.girlList.Length];
+		secondNdx += random
+		secondNdx = secondNdx % $scope.girlList.Length;
 	}
+	
+	$scope.firstGirl = $scope.girlList[firstNdx];
+	$scope.secondGirl = $scope.girlList[secondNdx];
 	
       }
       $scope.left = function(){

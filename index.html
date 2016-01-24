@@ -95,8 +95,8 @@
       }
       $scope.battle = function(winner,loser){
       	///
-      	var R1 = Math.pow(winner.score/400);
-      	var R2 = Math.pow(loser.score/400);
+      	var R1 = Math.pow(10,winner.score/400);
+      	var R2 = Math.pow(10,loser.score/400);
       	
       	var E1 = R1/(R1 + R2);
       	var E2 = R2/(R1 + R2);

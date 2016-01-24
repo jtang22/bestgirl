@@ -37,7 +37,7 @@
       $scope.girlList = [];
       $scope.firstGirl;
       $scope.secondGirl;
-      
+      $scope.tabs = [1,0,0,0,0];
      
       $scope.getGirls = function(){
 	      var Girl = Parse.Object.extend("Girl");
@@ -142,6 +142,13 @@
       	
       	
       }
+      $scope.tabs = function(num){
+      	
+      	 for (var i = 0; i < tabs.length; i++) {
+		tabs[i]= 0;      
+	 }
+	 tabs[num]=1;
+      }
        $scope.addImage = function(){
       	
       	var Girl= Parse.Object.extend("Girl");
@@ -196,11 +203,11 @@
 
 	
 	<ul class="nav nav-tabs">
-    				<li class="active"><a data-toggle="tab" href="#content">Add a Girl</a></li>
-    				<li><a data-toggle="tab" href="#home">Pick a Girl</a></li>
-		 				<li><a data-toggle="tab" href="#menu1">See Leaderboard</a></li>
-    				<li><a data-toggle="tab" href="#menu2">Images</a></li>
-    				<li><a data-toggle="tab" href="#menu3">Search?</a></li>
+    				<li class="active"><a data-toggle="tab" href="#content" ng-click="tabs(0)">Add a Girl</a></li>
+    				<li><a data-toggle="tab" href="#home" ng-click="tabs(1)">Pick a Girl</a></li>
+		 		<li><a data-toggle="tab" href="#menu1" ng-click="tabs(2)">See Leaderboard</a></li>
+    				<li><a data-toggle="tab" href="#menu2" ng-click="tabs(3)">Images</a></li>
+    				<li><a data-toggle="tab" href="#menu3" ng-click="tabs(4)">Search?</a></li>
   </ul>
 
 
@@ -209,7 +216,7 @@
   		<div id="content" class="tab-pane fade in active">
       		<h3>Add Girl</h3>
       		
-      		<div class="container">
+      		<div class="container" ng-show = "tabs[0]">
       				<h3>First Name:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Kaname" ng-model="firstName" name="name2" />
       				<h3>Last Name:</h3>
@@ -235,7 +242,7 @@
       		<h3>Pick A Girl </h3>
       		
       		
-      		<div class="container">
+      		<div class="container" ng-show = "tabs[1]">
 		<h3>Pick a Girl:</h3>
 		
 		<div class = "col-sm-6">
@@ -265,11 +272,11 @@
       		
       		</div>
       		
-      		<div id="menu1" class="tab-pane fade in active">
+      		<div id="menu1" class="tab-pane fade in active" >
       		<h3>See Leaderboard </h3>
       		
       		
-      		<div class="container"  >
+      		<div class="container" ng-show = "tabs[2]"  >
   				<table id="myTable" class="table table-hover">
     				<tr>
     					<th>Photo</th>

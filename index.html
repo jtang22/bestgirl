@@ -51,7 +51,6 @@
 			        series:results[i].get("series"),
 			        image:results[i].get("image").url(),
 			        score:results[i].get("score"),
-			        total:results[i].get("total"),
 			        wins:results[i].get("wins"),
 			        losses:results[i].get("losses"),
 			        season:results[i].get("season")});
@@ -95,6 +94,20 @@
 	$scope.pickGirls();
       }
       $scope.battle = function(winner,loser){
+      	///
+      	var R1 = Math.pow(winner.score/400);
+      	var R2 = Math.pow(loser.score/400);
+      	
+      	var E1 = R1/(R1 + R2);
+      	var E2 = R2/(R1 + R2);
+      	
+      	var K = 32; //K factor for how much impact the math will have
+      	var R1new = R1 + K*(1 - E1);
+      	var R2new = R2 + K*(0 - E2);
+
+	
+      	
+      	///
       	
       	var winnerNewScore;
       	var winnerWins;
@@ -104,15 +117,13 @@
       	var loserLosses;
       	
       	
-      		var totalScoreWinner = winner.total + loser.score;
       		winner.wins += 1;
-      		winnerNewScore= (totalScoreWinner + 400*(winner.wins - winner.losses)/(winner.wins + winner.losses));
+      		winnerNewScore= R1new;
 		winnerWins = winner.wins;
 		winnerLosses= winner.losses;
 		
-		var totalScoreLoser = loser.total + winner.score;
 		loser.losses += 1;
-		loserNewScore = (totalScoreLoser + 400 * (loser.wins - loser.losses)/(loser.wins + loser.losses));
+		loserNewScore = R2new;
 		loserWins = loser.wins;
 		loserLosses = loser.losses;
 	   
@@ -130,7 +141,6 @@
       	queryWinner.find({
   	      success: function(results) {
 		     results[0].set("score",winnerNewScore);
-		     results[0].set("total",totalScoreWinner);
 		     results[0].set("wins",winnerWins);
 		     results[0].set("losses",winnerLosses);
 		     results[0].save();
@@ -142,7 +152,6 @@
       	queryLoser.find({
   	      success: function(results) {
 		     results[0].set("score",loserNewScore);
-		     results[0].set("total",totalScoreLoser);
 		     results[0].set("wins",loserWins);
 		     results[0].set("losses",loserLosses);
 		     results[0].save();
@@ -170,7 +179,6 @@
       	girl.set("series",$scope.series);
       	girl.set("score",500);
       	girl.set("season",$scope.season);
-      	girl.set("total",0);
       	girl.set("wins",0);
       	girl.set("losses",0);
   		

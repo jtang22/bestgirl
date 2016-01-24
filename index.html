@@ -157,6 +157,7 @@
       	girl.set("lastName",$scope.lastName);
       	girl.set("series",$scope.series);
       	girl.set("score",500);
+      	girl.set("season",$scope.season);
       	girl.set("total",0);
       	girl.set("wins",0);
       	girl.set("losses",0);
@@ -304,12 +305,13 @@
       				<input class="form-control"  type="text"  placeholder="Example: Chidori" ng-model="lastName" />
     				<h3>Series:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Full Metal Panic" ng-model="series"/>
-      			
+      				<h3>Season:</h3>
+      				<input class="form-control"  type="text"  placeholder="Example: Winter 2015" ng-model="season"/>
       				<h3>Image:</h3>
       				<input type="file" id="image" ng-model="image"/>
 
       				<p></p>
-      				<input class="btn btn-primary btn-block" type="submit" id="addImage" value="Submit" ng-click="addImage()" />
+      				<input class="btn btn-primary btn-block" type="submit" id="addImage" value="Submit" ng-click="addImage()" ng-disabled = "!image" />
       			
       
 

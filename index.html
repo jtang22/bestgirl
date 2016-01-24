@@ -273,7 +273,7 @@
 				Wins: {{firstGirl.wins}} Losses:{{firstGirl.losses}} 
 			</div>
 			<div class = "row-sm-3">
-				<input class="btn btn-primary form-control" type="submit" id="left" value="firstGirl.firstName" ng-click="clicked = true;left()" ng-disabled ="clicked"/>	
+				<input class="btn btn-primary form-control" type="submit" id="left" value="{{firstGirl.firstName}}" ng-click="clicked = true;left()" ng-disabled ="clicked"/>	
 			</div>
 		</div>
 		<div class = "col-sm-6">
@@ -297,7 +297,7 @@
 
 			</div>
 			<div class = "row-sm-3">
-				<input class="btn btn-primary form-control" type="submit" id="right" value="secondGirl.firstName" ng-click="clicked=true;right()" ng-disabled = "clicked"/>	
+				<input class="btn btn-primary form-control" type="submit" id="right" value="{{secondGirl.firstName}}" ng-click="clicked=true;right()" ng-disabled = "clicked"/>	
 			</div>
 		</div>
      

@@ -102,8 +102,8 @@
       	var E2 = R2/(R1 + R2);
       	
       	var K = 32; //K factor for how much impact the math will have
-      	var R1new = R1 + K*(1 - E1);
-      	var R2new = R2 + K*(0 - E2);
+      	var R1new = winner.score + K*(1 - E1);
+      	var R2new = loser.score + K*(0 - E2);
 
 	
       	

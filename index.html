@@ -82,16 +82,18 @@
 	$scope.firstGirl = $scope.girlList[firstNdx];
 	$scope.secondGirl = $scope.girlList[secondNdx];
 	
+	if (firstNdx == second Ndx){
+		$scope.secondGirl = $scope.girlList[(secondNdx + 1) % $scope.girlList.Length ];
+	}
+	
       }
       $scope.left = function(){
 //      	alert("picked left girl");
       	$scope.battle($scope.firstGirl,$scope.secondGirl);
-      	$scope.pickGirls();
       }
       $scope.right = function(){
 //	alert("picked right girl") ;  
 	$scope.battle($scope.secondGirl,$scope.firstGirl);
-	$scope.pickGirls();
       }
       $scope.battle = function(winner,loser){
       	///

@@ -67,9 +67,7 @@
       $scope.pickGirls = function() {
       	var firstNdx = Math.floor(Math.random() * $scope.girlList.length);
       	var secondNdx = Math.floor(Math.random() * $scope.girlList.length);
-      	while(firstNdx == secondNdx) {
-      		secondNdx = Math.floor(Math.random() * $scope.girlList.length);
-      	}
+        
 	$scope.firstGirl = $scope.girlList[firstNdx];
 	$scope.secondGirl = $scope.girlList[secondNdx];
 	

@@ -204,9 +204,9 @@
 	<div class="container">
   		<h2>Navigation Bar</h2>
 		<ul class="nav nav-tabs">
-    			<li class="active"><a data-toggle="tab" href="#home" ng-click="tabs(0)">Add a Girl</a></li>
+    			<li class="active"><a data-toggle="tab" href="#home" ng-click="tabs(0)">Pick a Girl</a></li>
 		 	<li><a data-toggle="tab" href="#menu1" ng-click="tabs(1)">See Leaderboard</a></li>
-    			<li><a data-toggle="tab" href="#menu2" ng-click="tabs(2)">Images</a></li>
+    			<li><a data-toggle="tab" href="#menu2" ng-click="tabs(2)">Add New Girl</a></li>
   		</ul>
 
 
@@ -214,7 +214,7 @@
   	
       		
     		<div id="home" class="tab-pane fade in active">
-      			<h3>Add a Book</h3>
+      		<h3>Which is the most Kawaii?</h3>
       
 		<div class="container" >
 			
@@ -224,7 +224,7 @@
 		
 		<div class = "col-sm-6">
 			<div class = "row-sm-3">
-				<img ng-src="{{firstGirl.image}}"  style="height:128px;"/>	
+				<img ng-src="{{firstGirl.image}}"  style="height:256px;"/>	
 				{{firstGirl.score}}
 			</div>
 			<div class = "row-sm-3">
@@ -234,7 +234,7 @@
 		<div class = "col-sm-6">
 			
 			<div class = "row-sm-3">
-				<img ng-src="{{secondGirl.image}}"   style="height:128px;"/>	
+				<img ng-src="{{secondGirl.image}}"   style="height:256px;"/>	
 				{{secondGirl.score}}
 
 			</div>
@@ -255,7 +255,7 @@
     		
     		
     		<div id="menu1" class="tab-pane fade">
-      			<h3>Add Words to a Book </h3>
+      			<h3>View LeaderBoard </h3>
  
 	 		<div class="container">
   				<table id="myTable" class="table table-hover">
@@ -288,7 +288,7 @@
 	 	</div>
 	 		
 	 	<div id="menu2" class="tab-pane fade">
-      			<h3>Add Images to a Book</h3>
+      			<h3>Add New Girl</h3>
 			<div class="container" >
       				<h3>First Name:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Kaname" ng-model="firstName" name="name2" />

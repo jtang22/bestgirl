@@ -53,7 +53,9 @@
 			        score:results[i].get("score"),
 			        total:results[i].get("total"),
 			        wins:results[i].get("wins"),
-			        losses:results[i].get("losses")})
+			        losses:results[i].get("losses"),
+			        season:results[i[.get("season")]]
+			        })
 			        $scope.pickGirls();
 			        $scope.$apply();
 		          }
@@ -229,6 +231,8 @@
 				<p></p>
 				Anime: {{firstGirl.series}}
 				<p></p>
+				Season: {{firstGirl.season}}
+				<p></p>
 				Score: {{firstGirl.score}}
 			</div>
 			<div class = "row-sm-3">
@@ -244,6 +248,8 @@
 				{{secondGirl.lastName}}
 				<p></p>
 				Anime: {{secondGirl.series}}
+				<p></p>
+				Season: {{secondGirl.season}}
 				<p></p>
 				Score: {{secondGirl.score}}
 

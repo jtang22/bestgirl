@@ -205,46 +205,22 @@
   		<h2>Navigation Bar</h2>
 		<ul class="nav nav-tabs">
     			<li class="active"><a data-toggle="tab" href="#home" ng-click="tabs(0)">Add a Girl</a></li>
-    			<li><a data-toggle="tab" href="#content" ng-click="tabs(1)">Pick a Girl</a></li>
+    			<li><a data-toggle="tab" href="#home" ng-click="tabs(1)">Pick a Girl</a></li>
 		 	<li><a data-toggle="tab" href="#menu1" ng-click="tabs(2)">See Leaderboard</a></li>
     			<li><a data-toggle="tab" href="#menu2" ng-click="tabs(3)">Images</a></li>
-    			<li><a data-toggle="tab" href="#menu3" ng-click="tabs(4)">Search?</a></li>
   		</ul>
 
 
   		<div class="tab-content">
-  		<div id="content" class="tab-pane fade in active">
-      		<h3>View Content </h3>
+  	
       		
-      		
-      		<div class="container" >
-      				<h3>First Name:</h3>
-      				<input class="form-control"  type="text"  placeholder="Example: Kaname" ng-model="firstName" name="name2" />
-      				<h3>Last Name:</h3>
-      				<input class="form-control"  type="text"  placeholder="Example: Chidori" ng-model="lastName" />
-    				<h3>Series:</h3>
-      				<input class="form-control"  type="text"  placeholder="Example: Full Metal Panic" ng-model="series"/>
-      			
-      				<h3>Image:</h3>
-      				<input type="file" id="image" ng-model="image"/>
-
-      				<p></p>
-      				<input class="btn btn-primary btn-block" type="submit" id="addImage" value="Submit" ng-click="addImage()" />
-      			
-      
-
-		</div >
-					
-
-      		
-      		
-      		
-      		
-      		</div>
-    		<div id="home" class="tab-pane fade">
+    		<div id="home" class="tab-pane fade in active">
       			<h3>Add a Book</h3>
       
 		<div class="container" >
+			
+			
+			
 		<h3>Pick a Girl:</h3>
 		
 		<div class = "col-sm-6">
@@ -314,7 +290,23 @@
 	 		
 	 	<div id="menu2" class="tab-pane fade">
       			<h3>Add Images to a Book</h3>
-		
+			<div class="container" >
+      				<h3>First Name:</h3>
+      				<input class="form-control"  type="text"  placeholder="Example: Kaname" ng-model="firstName" name="name2" />
+      				<h3>Last Name:</h3>
+      				<input class="form-control"  type="text"  placeholder="Example: Chidori" ng-model="lastName" />
+    				<h3>Series:</h3>
+      				<input class="form-control"  type="text"  placeholder="Example: Full Metal Panic" ng-model="series"/>
+      			
+      				<h3>Image:</h3>
+      				<input type="file" id="image" ng-model="image"/>
+
+      				<p></p>
+      				<input class="btn btn-primary btn-block" type="submit" id="addImage" value="Submit" ng-click="addImage()" />
+      			
+      
+
+		</div >
 		
 		</div>
 

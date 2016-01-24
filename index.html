@@ -55,10 +55,10 @@
 			        losses:results[i].get("losses"),
 			        season:results[i].get("season")});
 			        $scope.girlList.sort($scope.compare);
-			        $scope.$apply();
-			        $scope.pickGirls();
+			        
 		          }
-		 
+		 		$scope.$apply();
+			        $scope.pickGirls();
 		        
   	      },
   	      error: function(error) {
@@ -165,11 +165,13 @@
 		     results[0].set("wins",loserWins);
 		     results[0].set("losses",loserLosses);
 		     results[0].save();
+
   	      },
   	      error: function(error) {
   	      	alert("Error");
 	     }
       	});
+      	
       	$scope.getGirls();
       	
       	

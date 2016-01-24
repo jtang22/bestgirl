@@ -38,6 +38,7 @@
       $scope.firstGirl;
       $scope.secondGirl;
       $scope.tabs = [1,0,0,0,0];
+      $scope.clicked = false;
      
       $scope.getGirls = function(){
 	      var Girl = Parse.Object.extend("Girl");
@@ -91,6 +92,7 @@
 	
 	$scope.firstGirl = $scope.girlList[firstNdx];
 	$scope.secondGirl = $scope.girlList[secondNdx];
+	$scope.clicked = false;
 	$scope.$apply();
 
 	
@@ -271,7 +273,7 @@
 				Wins: {{firstGirl.wins}} Losses:{{firstGirl.losses}} 
 			</div>
 			<div class = "row-sm-3">
-				<input class="btn btn-primary form-control" type="submit" id="left" ng-click="left()"/>	
+				<input class="btn btn-primary form-control" type="submit" id="left" value="firstGirl.firstName" ng-click="clicked = true;left()" ng-disabled ="clicked"/>	
 			</div>
 		</div>
 		<div class = "col-sm-6">
@@ -295,7 +297,7 @@
 
 			</div>
 			<div class = "row-sm-3">
-				<input class="btn btn-primary form-control" type="submit" id="right" ng-click="right()"/>	
+				<input class="btn btn-primary form-control" type="submit" id="right" value="secondGirl.firstName" ng-click="clicked=true;right()" ng-disabled = "clicked"/>	
 			</div>
 		</div>
      

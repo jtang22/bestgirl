@@ -55,8 +55,8 @@
 			        losses:results[i].get("losses"),
 			        season:results[i].get("season")});
 			        $scope.girlList.sort($scope.compare);
-			        $scope.pickGirls();
 			        $scope.$apply();
+			        $scope.pickGirls();
 		          }
 		 
 		        
@@ -76,6 +76,9 @@
     }
 
       $scope.pickGirls = function() {
+      	while($scope.girlList.length < 2){
+      		alert("waiting");
+      	}
       	var firstNdx = Math.floor(Math.random() * $scope.girlList.length);
       	var secondNdx = Math.ceil(Math.random() * $scope.girlList.length);
       	

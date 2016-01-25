@@ -43,6 +43,7 @@
       $scope.getGirls = function(){
 	      var Girl = Parse.Object.extend("Girl");
 	      var query = new Parse.Query(Girl);
+        query.notEqualTo("saftey", 0);
 	      query.find({
   	      success: function(results) {
 		        $scope.girlList = [];
@@ -196,6 +197,7 @@
       	girl.set("season",$scope.season);
       	girl.set("wins",0);
       	girl.set("losses",0);
+        girl.set("safety",0);
   		
   		
   		var imageUploadControl = $("#image")[0];

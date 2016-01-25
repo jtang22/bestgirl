@@ -31,6 +31,21 @@
 			
 			
 		</script>
+
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72824454-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
 		<script>
     angular.module('submitExample', [])
     .controller('ExampleController', ['$scope', function($scope) {
@@ -59,7 +74,7 @@
 			        $scope.girlList.sort($scope.compare);
 			        
 		          }
-		 		$scope.$apply();
+		 		      $scope.$apply();
 			        $scope.pickGirls();
 		        
   	      },
@@ -193,7 +208,7 @@
       	girl.set("firstName",$scope.firstName);
       	girl.set("lastName",$scope.lastName);
       	girl.set("series",$scope.series);
-      	girl.set("score",500);
+      	girl.set("score",1500);
       	girl.set("season",$scope.season);
       	girl.set("wins",0);
       	girl.set("losses",0);
@@ -238,7 +253,7 @@
 	<div class="container">
 		<ul class="nav nav-tabs">
     			<li class="active"><a data-toggle="tab" href="#home" ng-click="tabs(0)">Best Girl</a></li>
-		 	<li><a data-toggle="tab" href="#menu1" ng-click="tabs(1)">Leaderboard</a></li>
+		 	    <li><a data-toggle="tab" href="#menu1" ng-click="tabs(1);getGirls();">Leaderboard</a></li>
     			<li><a data-toggle="tab" href="#menu2" ng-click="tabs(2)">Add New Girl</a></li>
   		</ul>
 
@@ -253,7 +268,6 @@
 			
 			
 			
-		<h3>Best Girl:</h3>
 		
 		<div class = "col-sm-6">
 			<div class = "row-sm-3">
@@ -273,6 +287,8 @@
 				Score: {{firstGirl.score}}
 				<p></p>
 				Wins: {{firstGirl.wins}} Losses:{{firstGirl.losses}} 
+        <p></p>
+
 			</div>
 			<div class = "row-sm-3">
 				<input class="btn btn-primary form-control" type="submit" id="left" value="{{firstGirl.firstName}}" ng-click="clicked = true;left()" ng-disabled ="clicked"/>	
@@ -295,6 +311,7 @@
 				Score: {{secondGirl.score}}
 				<p></p>
 				Wins: {{secondGirl.wins}} Losses: {{secondGirl.losses}} 
+        <p></p>
 
 
 			</div>

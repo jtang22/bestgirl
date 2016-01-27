@@ -261,6 +261,7 @@
     			<li class="active"><a data-toggle="tab" href="#home" ng-click="tabs(0)">Best Girl</a></li>
 		 	    <li><a data-toggle="tab" href="#menu1" ng-click="tabs(1);getGirls();">Leaderboard</a></li>
     			<li><a data-toggle="tab" href="#menu2" ng-click="tabs(2)">Add New Girl</a></li>
+          <li><a data-toggle="tab" href="#menu3" ng-click="tabs(3)">About</a></li>
   		</ul>
 
 
@@ -371,6 +372,7 @@
 	 	<div id="menu2" class="tab-pane fade">
       			<h3>Add New Girl</h3>
             Note: All submissions must go through admin approval before being validated
+                  Please select images on .PNG format in portrait orientation
 			<div class="container" >
       				<h3>First Name:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Kaname" ng-model="firstName" name="name2" />
@@ -391,6 +393,19 @@
 		</div >
 		
 		</div>
+
+
+    <div id="menu3" class="tab-pane fade">
+            <h3>About</h3>
+            Animemash is a website where anime characters are brought up two at time to battle for your attention.
+            Each anime character has a score that reflects how often they were chosen against other characters.
+            Using the Elo chess ranking algorithm, the anime characters' scores are updated based on the score of the opponent they faced.
+            An overall leaderboard tracks which characters have been voted on the most.
+
+            Animemash was created by Benjamin Lin, a Computer Engineering student at Cal Poly SLO.
+      
+    
+    </div>
 
 			
       				

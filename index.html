@@ -222,7 +222,7 @@
 		  	var image = imageUploadControl.files[0];
    		 	var imageName = $scope.imageName;
    		 	parseImage = new Parse.File(imageName, image);
-   		 	alert("Uploaded Image: " + parseImage);
+   		 	alert("Uploaded Image: " + imageName);
       		}
   		girl.set("image",parseImage);
   		girl.save();
@@ -291,7 +291,7 @@
 
 			</div>
 			<div class = "row-sm-3">
-				<input class="btn btn-primary form-control" type="submit" id="left" value="{{firstGirl.firstName}}" ng-click="clicked = true;left()" ng-disabled ="clicked"/>	
+				<input class="btn btn-primary form-control" type="submit" id="left" value="Choose: {{firstGirl.firstName}}" ng-click="clicked = true;left()" ng-disabled ="clicked"/>	
 			</div>
 		</div>
 		<div class = "col-sm-6">
@@ -316,7 +316,7 @@
 
 			</div>
 			<div class = "row-sm-3">
-				<input class="btn btn-primary form-control" type="submit" id="right" value="{{secondGirl.firstName}}" ng-click="clicked=true;right()" ng-disabled = "clicked"/>	
+				<input class="btn btn-primary form-control" type="submit" id="right" value="Choose: {{secondGirl.firstName}}" ng-click="clicked=true;right()" ng-disabled = "clicked"/>	
 			</div>
 		</div>
      
@@ -364,12 +364,13 @@
 	 		
 	 	<div id="menu2" class="tab-pane fade">
       			<h3>Add New Girl</h3>
+            Note: All submissions must go through admin approval before being validated
 			<div class="container" >
       				<h3>First Name:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Kaname" ng-model="firstName" name="name2" />
       				<h3>Last Name:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Chidori" ng-model="lastName" />
-    				<h3>Series:</h3>
+    				  <h3>Series:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Full Metal Panic" ng-model="series"/>
       				<h3>Season:</h3>
       				<input class="form-control"  type="text"  placeholder="Example: Winter 2015" ng-model="season"/>
